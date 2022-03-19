@@ -1,0 +1,2 @@
+# technoric
+Technorick Consultancies
