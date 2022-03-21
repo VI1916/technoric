@@ -5,12 +5,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+            $(function(){
+                $("#includedContent").load("header.html");
+            });
+        </script>
 </head>
-<body>
+<style>
+p {
+ color: cornsilk;
+ font-size: 20px;
+}
+h3 {
+ color: cornsilk;
+ font-size: 50px;
+ font-family: fangsong;
+}
+.carousel-caption {
+ padding-bottom: 100px
+}
+img {
+ width: 1080px;
+ height: 720px
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-header{
+	margin-right: 0px;
+	margin-left: 0px;
+}
 
-<div class="container">
+</style>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-size: 36px;"><b>Technoric</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="whatwedo.html">What we do</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Share Feedback</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Subscribe our Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="container" style="padding-right: 0px; padding-left: 0px; width: 100%">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -23,25 +82,25 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="images/dollars.jpg" style="width:100%;">
+        <img src="images/dollars.jpg" alt="Los Angeles" style="width:100%;">
         <div class="carousel-caption">
-          <h3>Save thousands of $$$</h3>
-          <p>We are here to streamline your processes to big money on operations</p>
+          <h3 class="animate__animated animate__backInDown">Save big of $$$$$$$</h3>
+          <p class="animate__animated animate__rubberBand">We help businesses to streamline processes to save big on operations</p>
         </div>
       </div>
 
       <div class="item">
-        <img src="images/workforce.jpg" style="width:100%;">
+        <img src="images/workforce.jpg" alt="Chicago" style="width:100%;">
         <div class="carousel-caption">
-          <h3>Competent Workforce</h3>
-          <p>We enable your talents to compete with modern technologies</p>
+          <h3 class="animate__animated animate__backInDown" >Competent Workforce</h3>
+          <p>Enable your talents to work on modern technologies</p>
         </div>
       </div>
     
       <div class="item">
-        <img src="images/Automation.jpg" style="width:100%;">
+        <img src="images/Automation.jpg" alt="New York" style="width:100%;">
         <div class="carousel-caption">
-          <h3>Automation</h3>
+          <h3 class="animate__animated animate__backInDown" >Automation</h3>
           <p>Let machines handle your tasks </p>
         </div>
       </div>
@@ -59,6 +118,12 @@
     </a>
   </div>
 </div>
+<div id="footer"></div>
 
 </body>
 </html>
+<script>
+$(document).ready(function() {
+    $('#footer').load('footer.html');
+});
+</script>
