@@ -1,0 +1,15 @@
+<script type="text/ng-template" id="CRS3.html">
+<!-- <div>CRS3 heading</div> -->
+<div class="row">
+ <div  modal="shouldBeOpen" close="close()">
+<div class="small-12 columns text-align-center">
+	<p>{{'POP_UP_WINDOW_YES_NO'| translate}}</p>
+		<hr>
+	<p>{{'POP_UP_WINDOW_YES_NO1'| translate}}</p>
+			<!-- <button class="btn btn-primary" ng-click="cancel()" focus-me="shouldBeOpen">OK</a> -->
+				<div><span><button id="OKButtin" class="btn btn-modal"  focus-me="false" style="position: relative;top: -5px; margin-bottom:50px;">OK</button></span>
+
+		</div>		
+	</div>
+</div>
+</script>
