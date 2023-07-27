@@ -1,0 +1,56 @@
+<script type="text/ng-template" id="CRS3.html">
+  <div class="row">
+    <div>
+      <button id="popoverButton" class="btn btn-modal" ng-click="togglePopover()">Open Popover</button>
+      <div id="popoverContent" class="hide">
+        <div class="small-12 columns text-align-center">
+          <p>{{ 'POP_UP_WINDOW_YES_NO' | translate }}</p>
+          <hr>
+          <p>{{ 'POP_UP_WINDOW_YES_NO1' | translate }}</p>
+          <div>
+            <span>
+              <button id="OKButton" class="btn btn-modal" focus-me="false" style="position: relative;top: -5px; margin-bottom:50px;" ng-click="closePopover()">OK</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+app.controller('YourController', function ($scope, $document) {
+  $scope.popoverOpen = false;
+
+  $scope.togglePopover = function () {
+    $scope.popoverOpen = !$scope.popoverOpen;
+    if ($scope.popoverOpen) {
+      // Show the popover
+      angular.element("#popoverContent").removeClass("hide");
+      // Attach a click event listener to the document to handle clicks outside the popover
+      $document.on("click", $scope.onDocumentClick);
+    } else {
+      // Hide the popover
+      angular.element("#popoverContent").addClass("hide");
+      // Remove the click event listener from the document
+      $document.off("click", $scope.onDocumentClick);
+    }
+  };
+
+  $scope.closePopover = function () {
+    // Close the popover when the "OK" button is clicked
+    $scope.popoverOpen = false;
+    angular.element("#popoverContent").addClass("hide");
+    $document.off("click", $scope.onDocumentClick);
+  };
+
+  $scope.onDocumentClick = function (event) {
+    // Close the popover when clicked outside of it
+    if (!angular.element(event.target).closest("#popoverContent").length) {
+      $scope.$apply(function () {
+        $scope.closePopover();
+      });
+    }
+  };
+});
+
