@@ -1,0 +1,8 @@
+var  PEP = $modal.open({
+						templateUrl: 'CRS3.html',
+						controller: 'applicationController',
+						windowClass: 'edit_cust_modal',
+						 backdrop  : 'static',
+						 keyboard  : false ,
+						scope: $scope
+					});$rootScope.modalwindow_val_edit=PEP;
