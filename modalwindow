@@ -1,8 +1,33 @@
-var  PEP = $modal.open({
-						templateUrl: 'CRS3.html',
-						controller: 'applicationController',
-						windowClass: 'edit_cust_modal',
-						 backdrop  : 'static',
-						 keyboard  : false ,
-						scope: $scope
-					});$rootScope.modalwindow_val_edit=PEP;
+var PEP = $modal.open({
+  templateUrl: 'CRS3.html',
+  controller: 'applicationController',
+  windowClass: 'edit_cust_modal',
+  backdrop: 'static',
+  keyboard: false,
+  scope: $scope
+});
+
+$rootScope.modalwindow_val_edit = PEP;
+
+// Function to close the popover
+function closePopover() {
+  PEP.close();
+  angular.element(document).off('click', onDocumentClick);
+}
+
+// Function to handle clicks outside the popover
+function onDocumentClick(event) {
+  if (!angular.element(event.target).closest('.edit_cust_modal').length) {
+    $scope.$apply(closePopover);
+  }
+}
+
+// Show the popover and add a click event listener to the document
+PEP.opened.then(function () {
+  angular.element(document).on('click', onDocumentClick);
+});
+
+// Cleanup event listener when the popover is closed
+PEP.result.finally(function () {
+  angular.element(document).off('click', onDocumentClick);
+});
