@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popover without Title</title>
+  <!-- Include jQuery and Bootstrap CSS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Include Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<button type="button" class="btn btn-default" data-toggle="popover" data-content="This is the popover content without a title.">Open Popover</button>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement: 'auto',
+        trigger: 'click'
+    });
+});
+</script>
+
+</body>
+</html>
