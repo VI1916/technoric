@@ -1,0 +1,46 @@
+<div ng-controller="applicationController">
+	<div ng-init="checkItemId();AssignValueByItemId();" ng-cloak>
+		<div class="row small-12 medium-12 large-12 columns">
+			<div ng-include="'views/header.html'"></div>
+		</div>
+
+		<div class='sbkdetail_page'>
+			<div>
+				<div class="row seperation"></div>
+
+				<div class="small-12 medium-12 large-12 column common-padding">
+					<p class="completion-header"
+						style="color: #34384b; font-family: Manulife JH Sans-Light; font-size: 32px; font-weight: 300; text-align: center; margin-top: 20px;">{{'YOTI_TEXT1'| translate}}
+						<br>
+						<br>
+					</p>
+				</div>
+
+				<div class="small-12 medium-12 large-12 column common-padding">
+					<p
+						style="font-family: Manulife JH Sans-Light; font-size: 16px; font-weight: 300; color: #34384b; text-align: center;">{{'YOTI_TEXT2'| translate}}
+					</p>
+				</div>
+				
+				<!-- <div class="small-12 medium-12 large-12 column common-padding">
+					<p style="font-family: Manulife JH Sans-Light; font-size: 16px; font-weight: 300; color: #34384b; text-align: center;">
+						<a id="yotiUrlLink" href="{{yotiUrlEn}}" class="bold" style="text-decoration: underline;text-decoration-color: #008747;text-underline-position: under;">{{'YOTI_TEXT3'| translate}}</a>
+					</p>
+				</div> -->
+				<div class="small-12 medium-12 large-12 column common-padding">
+					<p class="yoti_align">
+						<a id="yotiUrlLink" href="{{yotiUrlEn}}" class="new_btn">{{'BUTTON_NEXT'| translate}}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row seperation" id="resultpage_footer"></div>
+
+	<div class="push"></div>
+	<div class="row">
+		<div ng-include="'views/PPTFooter.html'"></div>
+	</div>
+</div>
+
+
